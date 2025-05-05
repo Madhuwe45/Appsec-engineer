@@ -42,7 +42,7 @@ def get_driver(proxy_host,proxy_port):
         'sslProxy': PROXY
         # 'noProxy': ','.join(excluded_from_proxy)  # set this value as desired
         })
-    # driver = Firefox(firefox_binary=FirefoxBinary('/home/we45/Downloads/firefox-46.0.linux-x86_64.sdk/firefox-sdk/bin/firefox'), firefox_profile=fp,proxy=myproxy)    
+        
     driver = Firefox(fp,options=options)
     # driver = Firefox(fp,proxy=myproxy)
     print("Initialized firefox driver")
