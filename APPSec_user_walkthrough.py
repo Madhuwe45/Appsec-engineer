@@ -64,7 +64,7 @@ info = mail+'@we45.com'
 print(info)
 
 email_login='madhu.kumar@we45.com'
-email_password= ' '
+email_password= '  '
 
 # email_login='deepak.venkatesh@we45.com'
 # email_password= 'Progress@123'
@@ -72,18 +72,9 @@ email_password= ' '
 def Login(driver,target):
     try:
         print("Login")
-        # driver.get('{0}/login.htm'.format(target))
         driver.get('{0}'.format(target))
         driver.implicitly_wait(20)
         time.sleep(8)
-        # driver.get('https://staging.learning.appsecengineer.com/auth?email=madhu.kumar+admin@we45.com&code=a79fa47e-ce23-58e4-b85e-96dba90c2eda')
-        # driver.implicitly_wait(20)
-        # time.sleep(10)
-        # #Proceed Portal
-        # driver.find_element_by_xpath('/html/body/div[1]/div/div/main/div/div[2]/button/span[2]/span').click()
-        # driver.implicitly_wait(20)
-        # time.sleep(10)
-
         driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div/div[3]/form/div/label/div/div[1]/div/input').clear()
         driver.implicitly_wait(20)
         driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div/div[3]/form/div/label/div/div[1]/div/input').send_keys(email_login)
@@ -159,6 +150,14 @@ def dashboard(driver,target):
         driver.find_element_by_xpath('/html/body/div[1]/div/header/div[1]/div[1]/div[2]/button[2]/span[2]/div/div[2]/img').click()
         driver.implicitly_wait(20)
         time.sleep(5)
+        #Profile
+        driver.get('{0}portal/profile/profile'.format(target))
+        driver.implicitly_wait(20)
+        time.sleep(5)
+        #View Public Profile
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/main/div/div[1]/div[1]/a/button/span[2]/span').click()
+        driver.implicitly_wait(20)
+        time.sleep(10)
     except BaseException as e:
         log_exception(e)
 
@@ -224,6 +223,37 @@ def Challenges(driver,target):
         Challenges= driver.current_url
         print(Challenges)
         print('Challenges')
+        #Challenge1
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[4]/div/div[1]/div/div/div[1]/div/div[2]/div[3]/div[1]/button/span[2]').click()
+        driver.implicitly_wait(20)
+        time.sleep(20)
+        #Start Lab
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[4]/div[1]/div[1]/div/div[1]/div/div/div/div[2]/div[2]/button/span[2]').click()
+        driver.implicitly_wait(20)
+        time.sleep(20)
+        #see hint
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[4]/div[1]/div[1]/div/div[1]/div/div/div/div[3]/button[1]/span[2]').click()
+        driver.implicitly_wait(20)
+        time.sleep(20)
+        #close button
+        driver.find_element_by_xpath('/html/body/div[4]/div/div[2]/div/div[1]/div[2]/button/span[2]').click()
+        driver.implicitly_wait(20)
+        time.sleep(15)
+        driver.get('https://staging.learning.appsecengineer.com/portal/running-labs')
+        driver.implicitly_wait(20)
+        time.sleep(15)
+        #Goto Lab
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div/div[2]/button[2]').click()
+        driver.implicitly_wait(20)
+        time.sleep(15)
+        #End Lab
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[4]/div[1]/div[1]/div/div[1]/div/div/div/div[4]/div[1]/div[1]/button').click()
+        driver.implicitly_wait(20)
+        time.sleep(20)
+        #End Lab #YES
+        driver.find_element_by_xpath('/html/body/div[4]/div/div[2]/div/div[3]/button').click()
+        driver.implicitly_wait(20)
+        time.sleep(20)
     except BaseException as e:
         log_exception(e)
 
@@ -1037,6 +1067,89 @@ def Course_Assignments(driver,target):
         log_exception(e)
 
 
+def Administrators_Organization_Integrations(driver,target):
+    try:
+        driver.get('{0}portal/company/admins'.format(target))
+        driver.implicitly_wait(20)
+        time.sleep(10)
+        print('Adminstrator')
+        #Download
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div[1]/div[1]/div[2]/div/div/a/span[2]/div[2]').click()
+        driver.implicitly_wait(20)
+        time.sleep(10)
+        print('Adminstrators list Downloaded')
+    except BaseException as e:
+        log_exception(e)
+    try:
+        driver.get('{0}portal/company/company-settings'.format(target))
+        driver.implicitly_wait(20)
+        time.sleep(10)
+        print('Organization')
+        #CSV Course video lab
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div[1]/div/div[1]/div/div/div[1]/button/span[2]/i').click()
+        driver.implicitly_wait(20)
+        time.sleep(10)
+        print('CSV Course video lab report Downloaded')
+    except BaseException as e:
+        log_exception(e)
+    try:
+        driver.get('{0}portal/lti-integration'.format(target))
+        driver.implicitly_wait(20)
+        time.sleep(10)
+        print('integration')
+        #Scim integration
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[1]').click()
+        driver.implicitly_wait(20)
+        time.sleep(10)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[2]/div/div/div/button/span[2]/span').click()
+        driver.implicitly_wait(20)
+        time.sleep(10)
+        print('Scim integration secret generate')
+    except BaseException as e:
+        log_exception(e)
+    try:
+        driver.get('{0}portal/lti-integration'.format(target))
+        driver.implicitly_wait(20)
+        time.sleep(10)
+        print('integration')
+        #Enterprise API integration
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[4]/div/div[1]').click()
+        driver.implicitly_wait(20)
+        time.sleep(10)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[4]/div/div[2]/div/div/div/button/span[2]/span').click()
+        driver.implicitly_wait(20)
+        time.sleep(10)
+        print('Enterprise API integration secret generate')
+    except BaseException as e:
+        log_exception(e)
+    try:
+        driver.get('{0}portal/lti-integration'.format(target))
+        driver.implicitly_wait(20)
+        time.sleep(10)
+        print('integration')
+        #LTI Setup for LMS
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[5]/div/div[1]').click()
+        driver.implicitly_wait(20)
+        time.sleep(10)
+        print('LTI Setup for LMS')
+    except BaseException as e:
+        log_exception(e)
+    try:
+        driver.get('{0}portal/lti-integration'.format(target))
+        driver.implicitly_wait(20)
+        time.sleep(10)
+        print('integration')
+        #Jira Integration
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[6]/div/div[1]').click()
+        driver.implicitly_wait(20)
+        time.sleep(2)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[6]/div/div[2]/div/div/div[1]/button/span[2]').click()
+        driver.implicitly_wait(20)
+        time.sleep(10)
+        print('Connect Jira')
+    except BaseException as e:
+        log_exception(e)
+
 class APPSec_user_walkthrough(object):
 
     def __init__(self, proxy_host = 'localhost', proxy_port = '8090', target = 'https://staging.learning.appsecengineer.com/'):
@@ -1064,6 +1177,7 @@ class APPSec_user_walkthrough(object):
             # Admin_interviews(driver,self.target)
             Admin_assignments(driver,self.target)
             Course_Assignments(driver,self.target)
+            Administrators_Organization_Integrations(driver,self.target)
         except BaseException as e:
             print("[ + ] Error !!!!!!!!!!!!",e)
 
