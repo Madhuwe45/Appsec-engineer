@@ -64,7 +64,7 @@ info = mail+'@we45.com'
 print(info)
 
 email_login='madhu.kumar@we45.com'
-email_password= 'M@dhuM@ddy'
+email_password= ' '
 
 # email_login='deepak.venkatesh@we45.com'
 # email_password= 'Progress@123'
