@@ -718,6 +718,9 @@ def Admin_assignments(driver,target):
         driver.find_element_by_xpath('/html/body/div[1]/div/header/div[2]/div[1]/div/div/div[3]/a').click()
         driver.implicitly_wait(20)
         time.sleep(20)
+        driver.execute_script("window.scrollBy(0,80)")
+        driver.implicitly_wait(20)
+        time.sleep(5)
         #Continue button
         driver.find_element_by_xpath('/html/body/div[1]/div/div/main/section/div[2]/div[3]/button/span[2]/span').click()
         driver.implicitly_wait(20)
@@ -977,7 +980,7 @@ def Course_Assignments(driver,target):
         driver.implicitly_wait(20)
         time.sleep(20)
         #Journey
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div[1]/div/div[2]/div[3]').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div[1]/div/div[2]/div[2]/div').click()
         driver.implicitly_wait(20)
         time.sleep(10)
         print('Journey')
@@ -1022,7 +1025,7 @@ def Course_Assignments(driver,target):
         driver.implicitly_wait(20)
         time.sleep(15)
         #Reports
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div[2]/div[1]/div/div[3]/div[3]').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div[2]/div[1]/div/div[3]/div[2]').click()
         driver.implicitly_wait(20)
         time.sleep(15)
         print('reports')
