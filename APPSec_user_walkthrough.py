@@ -42,6 +42,7 @@ def get_driver(proxy_host,proxy_port):
         'sslProxy': PROXY
         # 'noProxy': ','.join(excluded_from_proxy)  # set this value as desired
         })
+    # driver = Firefox(firefox_binary=FirefoxBinary('/home/we45/Downloads/firefox-46.0.linux-x86_64.sdk/firefox-sdk/bin/firefox'), firefox_profile=fp,proxy=myproxy)    
     driver = Firefox(fp,options=options)
     # driver = Firefox(fp,proxy=myproxy)
     print("Initialized firefox driver")
@@ -63,10 +64,10 @@ info = mail+'@we45.com'
 print(info)
 
 email_login='madhu.kumar@we45.com'
-email_password= '  '
+email_password= ''
 
 # email_login='deepak.venkatesh@we45.com'
-# email_password= '  '
+# email_password= ''
 
 def Login(driver,target):
     try:
@@ -153,10 +154,10 @@ def dashboard(driver,target):
         driver.get('{0}portal/profile/profile'.format(target))
         driver.implicitly_wait(20)
         time.sleep(5)
-        #View Public Profile
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/main/div/div[1]/div[1]/a/button/span[2]/span').click()
-        driver.implicitly_wait(20)
-        time.sleep(10)
+        # #View Public Profile
+        # driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/main/div/div[1]/div[1]/a/button/span[2]/span').click()
+        # driver.implicitly_wait(20)
+        # time.sleep(10)
     except BaseException as e:
         log_exception(e)
 
@@ -170,15 +171,15 @@ def Courses(driver,target):
         print(courses)
         print('courses')
         #search
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div/div[1]/label/div/div/div[2]/input').clear()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div/div[1]/label/div/div/div[2]/input').clear()
         driver.implicitly_wait(20)
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div/div[1]/label/div/div/div[2]/input').send_keys('API Security')
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div/div[1]/label/div/div/div[2]/input').send_keys('API Security')
         driver.implicitly_wait(20)
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div/div[1]/label/div/div/div[2]/input').send_keys(Keys.ENTER)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div/div[1]/label/div/div/div[2]/input').send_keys(Keys.ENTER)
         driver.implicitly_wait(20)
         time.sleep(10)
         #First 
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[4]/div/div[1]/div[1]/div/div/div/div[2]/div[4]/div[1]/button/span[2]').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[1]/div[1]/div/div/div/div[2]/div[4]/div[1]/button/span[2]').click()
         driver.implicitly_wait(20)
         time.sleep(180)
     except BaseException as e:
@@ -197,7 +198,7 @@ def journeys(driver,target):
         driver.implicitly_wait(20)
         time.sleep(10)
         #view joureny
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[4]/div/div[1]/div[1]/div/div/div[3]/button').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[1]/div[1]/div/div/div[3]/button').click()
         driver.implicitly_wait(20)
         time.sleep(10)
     except BaseException as e:
@@ -223,30 +224,30 @@ def Challenges(driver,target):
         print(Challenges)
         print('Challenges')
         #Challenge1
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[4]/div/div[1]/div/div/div[1]/div/div[2]/div[3]/div[1]/button/span[2]').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[1]/div/div/div[1]/div/div[2]/div[3]/div[1]/button/span[2]').click()
         driver.implicitly_wait(20)
         time.sleep(20)
         #Start Lab
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[4]/div[1]/div[1]/div/div[1]/div/div/div/div[2]/div[2]/button/span[2]').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div[4]/div[1]/div[1]/div/div[1]/div/div/div/div[2]/div[2]/button/span[2]').click()
         driver.implicitly_wait(20)
-        time.sleep(20)
+        time.sleep(25)
         #see hint
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[4]/div[1]/div[1]/div/div[1]/div/div/div/div[3]/button[1]/span[2]').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div[4]/div[1]/div[1]/div/div[1]/div/div/div/div[3]/button[1]/span[2]').click()
         driver.implicitly_wait(20)
-        time.sleep(20)
+        time.sleep(25)
         #close button
         driver.find_element_by_xpath('/html/body/div[4]/div/div[2]/div/div[1]/div[2]/button/span[2]').click()
         driver.implicitly_wait(20)
-        time.sleep(15)
+        time.sleep(20)
         driver.get('https://staging.learning.appsecengineer.com/portal/running-labs')
         driver.implicitly_wait(20)
         time.sleep(15)
         #Goto Lab
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div/div[2]/button[2]').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div/div[2]/button[2]').click()
         driver.implicitly_wait(20)
         time.sleep(15)
         #End Lab
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[4]/div[1]/div[1]/div/div[1]/div/div/div/div[4]/div[1]/div[1]/button').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div[4]/div[1]/div[1]/div/div[1]/div/div/div/div[4]/div[1]/div[1]/button/span[2]').click()
         driver.implicitly_wait(20)
         time.sleep(20)
         #End Lab #YES
@@ -297,7 +298,7 @@ def Admin_Teams(driver,target):
         driver.implicitly_wait(20)
         time.sleep(20)
         #create Team
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[3]/button/span[2]/span').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div[3]/button/span[2]/span').click()
         driver.implicitly_wait(20)
         time.sleep(20)
         #Name
@@ -314,19 +315,19 @@ def Admin_Teams(driver,target):
     except BaseException as e:
         log_exception(e)
     try:
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[2]/label/div/div/div[1]/input').clear()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div[2]/label/div/div/div[1]/input').clear()
         driver.implicitly_wait(20)
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[2]/label/div/div/div[1]/input').send_keys(mail)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div[2]/label/div/div/div[1]/input').send_keys(mail)
         driver.implicitly_wait(20)
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[2]/label/div/div/div[1]/input').send_keys(Keys.ENTER)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div[2]/label/div/div/div[1]/input').send_keys(Keys.ENTER)
         driver.implicitly_wait(20)
         time.sleep(10)
         #Detailed view
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[4]/div/div/div/div/div/table/tbody/tr[1]/td[3]/div/i').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div/div/div/table/tbody/tr[1]/td[3]/div/i').click()
         driver.implicitly_wait(20)
         time.sleep(5)
         #Add members Team
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[4]/div/div/div/div/div/table/tbody/tr[2]/td/div/div[2]/div[2]/button/span[2]/span').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div/div/div/table/tbody/tr[2]/td/div/div[2]/div[2]/button/span[2]/span').click()
         driver.implicitly_wait(20)
         time.sleep(20)
         #Add users
@@ -344,7 +345,7 @@ def Admin_Teams(driver,target):
         driver.implicitly_wait(20)
         time.sleep(20)
         #Team reports
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[1]/div/div[2]/div[2]/div').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div[1]/div/div[2]/div[2]/div').click()
         driver.implicitly_wait(20)
         time.sleep(10)
         print('Team completed')
@@ -411,7 +412,7 @@ def Admin_Build_challenge(driver,target):
         #SHow me challenge button
         driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/section/div[1]/form/div[2]/button').click()
         driver.implicitly_wait(20)
-        time.sleep(20)
+        time.sleep(25)
         #Save Question
         driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/section/div[2]/div/div/div/form/div[2]/button/span[2]/span').click()
         driver.implicitly_wait(20)
@@ -435,56 +436,56 @@ def Admin_tournaments(driver,target):
         driver.implicitly_wait(20)
         time.sleep(20)    
         #Create Tournament
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/button/span[2]/span').click()    
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/button/span[2]/span').click()    
         driver.implicitly_wait(20)
         time.sleep(20)
         #NAME
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div[1]/div[2]/div/div/div/form/div[1]/label/div/div[1]/div/input').clear()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div[1]/div[2]/div/div/div/form/div[1]/label/div/div[1]/div/input').clear()
         driver.implicitly_wait(20)
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div[1]/div[2]/div/div/div/form/div[1]/label/div/div[1]/div/input').send_keys(mail)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div[1]/div[2]/div/div/div/form/div[1]/label/div/div[1]/div/input').send_keys(mail)
         driver.implicitly_wait(20)
         time.sleep(4)
         #description
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div[1]/div[2]/div/div/div/form/div[2]/label/div/div[1]/div[1]/textarea').clear()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div[1]/div[2]/div/div/div/form/div[2]/label/div/div[1]/div[1]/textarea').clear()
         driver.implicitly_wait(20)
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div[1]/div[2]/div/div/div/form/div[2]/label/div/div[1]/div[1]/textarea').send_keys('this is the tournament description Textarea')
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div[1]/div[2]/div/div/div/form/div[2]/label/div/div[1]/div[1]/textarea').send_keys('this is the tournament description Textarea')
         driver.implicitly_wait(20)
         time.sleep(4)
         #Start date
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div[1]/div[2]/div/div/div/form/div[3]/label/div/div[1]/div[2]/input').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div[1]/div[2]/div/div/div/form/div[3]/label/div/div[1]/div[2]/input').click()
         driver.implicitly_wait(20)
         driver.find_element_by_xpath('/html/body/div[4]/div/div/div[2]/div[1]/div/div[3]/div/div[22]/button/span[2]/span').click()
         driver.implicitly_wait(20)
         time.sleep(5)
         #END date
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div[1]/div[2]/div/div/div/form/div[4]/label/div/div[1]/div[2]/input').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div[1]/div[2]/div/div/div/form/div[4]/label/div/div[1]/div[2]/input').click()
         driver.implicitly_wait(20)
         driver.find_element_by_xpath('/html/body/div[4]/div/div/div[2]/div[1]/div/div[3]/div/div[25]/button/span[2]/span').click()
         driver.implicitly_wait(20)
         time.sleep(5)
         
         #time in minutes
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div[1]/div[2]/div/div/div/form/div[6]/label/div/div[1]/div/input').clear()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div[1]/div[2]/div/div/div/form/div[6]/label/div/div[1]/div/input').clear()
         driver.implicitly_wait(20)
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div[1]/div[2]/div/div/div/form/div[6]/label/div/div[1]/div/input').send_keys('40')
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div[1]/div[2]/div/div/div/form/div[6]/label/div/div[1]/div/input').send_keys('40')
         driver.implicitly_wait(20)
         time.sleep(7)
         try:
             #select Teams
-            driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div[1]/div[2]/div/div/div/form/div[7]/label/div/div[1]/div[1]/div/input').click()
+            driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div[1]/div[2]/div/div/div/form/div[7]/label/div/div[1]/div[1]/div/input').click()
             driver.implicitly_wait(20)
-            driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div[1]/div[2]/div/div/div/form/div[7]/label/div/div[1]/div[1]/div/input').clear()
+            driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div[1]/div[2]/div/div/div/form/div[7]/label/div/div[1]/div[1]/div/input').clear()
             driver.implicitly_wait(20)
             driver.implicitly_wait(20)
-            driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div[1]/div[2]/div/div/div/form/div[7]/label/div/div[1]/div[1]/div/input').send_keys(Keys.DOWN)
+            driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div[1]/div[2]/div/div/div/form/div[7]/label/div/div[1]/div[1]/div/input').send_keys(Keys.DOWN)
             driver.implicitly_wait(20)
-            driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div[1]/div[2]/div/div/div/form/div[7]/label/div/div[1]/div[1]/div/input').send_keys(Keys.ENTER)
+            driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div[1]/div[2]/div/div/div/form/div[7]/label/div/div[1]/div[1]/div/input').send_keys(Keys.ENTER)
             driver.implicitly_wait(20)
             time.sleep(5)
         except BaseException as e:
             pass
         try:
-            user_element = driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div[1]/div[2]/div/div/div/form/div[8]/label/div/div/div[1]/div/input')
+            user_element = driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div[1]/div[2]/div/div/div/form/div[8]/label/div/div/div[1]/div/input')
             actions.double_click(user_element)
             actions.perform()
             driver.implicitly_wait(20)
@@ -497,14 +498,14 @@ def Admin_tournaments(driver,target):
         except BaseException as e:
             pass
         #Submit button
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div[1]/div[2]/div/div/div/form/div[10]/button[2]/span[2]/span').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div[1]/div[2]/div/div/div/form/div[10]/button[2]/span[2]/span').click()
         driver.implicitly_wait(20)
         time.sleep(20)
         print('Tournaments')      
     except BaseException as e:
         log_exception(e)
     try:
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div[2]/div[2]/div/div/div/button[1]/span[2]/span').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div[2]/div[2]/div/div/div/button[1]/span[2]/span').click()
         driver.implicitly_wait(20)
         time.sleep(20)
         #Learning Paths
@@ -533,7 +534,7 @@ def Admin_tournaments(driver,target):
         driver.implicitly_wait(20)
         time.sleep(20)
         #Submit button
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div[2]/div[2]/div/div/div/div[3]/button').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div[2]/div[2]/div/div/div/div[3]/button').click()
         driver.implicitly_wait(20)
         time.sleep(20)
     except BaseException as e:
@@ -543,15 +544,15 @@ def Admin_tournaments(driver,target):
         driver.implicitly_wait(20)
         time.sleep(20)
         #Search Name
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[4]/div/div[1]/div/label/div/div/div[2]/input').clear()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[1]/div/label/div/div/div[2]/input').clear()
         driver.implicitly_wait(20)
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[4]/div/div[1]/div/label/div/div/div[2]/input').send_keys(mail)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[1]/div/label/div/div/div[2]/input').send_keys(mail)
         driver.implicitly_wait(20)
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[4]/div/div[1]/div/label/div/div/div[2]/input').send_keys(Keys.ENTER)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[1]/div/label/div/div/div[2]/input').send_keys(Keys.ENTER)
         driver.implicitly_wait(20)
         time.sleep(10)
         #Finalize button
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[5]/div/div/div/table/tbody[2]/tr/td[5]/div/div[3]/div/div/span').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[4]/div/div/div/table/tbody[2]/tr/td[5]/div/div[3]/div/div/span').click()
         driver.implicitly_wait(20)
         time.sleep(10)
         #submit
@@ -569,7 +570,7 @@ def Admin_assignments(driver,target):
         time.sleep(20)
         print('assignments')
         #assignment
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div[1]/div[2]/div[1]/table/tbody/tr/td[1]').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div[1]/div[2]/div[1]/table/tbody/tr/td[1]').click()
         driver.implicitly_wait(20)
         time.sleep(20)
         parent_window =  driver.current_window_handle
@@ -578,7 +579,8 @@ def Admin_assignments(driver,target):
         time.sleep(5)
         try:
             #CLick
-            driver.find_element_by_xpath('/html/body/div[1]/div/div/main/div/div[1]/div/div/div[1]/table/tbody/tr[1]/td[1]/div').click()
+            driver.find_element_by_xpath('/html/body/div[1]/div/div/main/div/div[1]/div/div/div[1]/table/tbody/tr/td[1]/div').click()
+            # driver.find_element_by_xpath('/html/body/div[1]/div/div/main/div/div[1]/div/div/div[1]/table/tbody/tr[1]/td[1]/div').click()
             driver.implicitly_wait(20)
             time.sleep(20)
         except BaseException as e:
@@ -902,30 +904,30 @@ def Course_Assignments(driver,target):
         course_assignments= driver.current_url
         print(course_assignments)
         #create
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div[2]/div[1]/div/div/a/span[2]/span').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div[2]/div[1]/div/div/a/span[2]/span').click()
         driver.implicitly_wait(20)
         time.sleep(20)
         #first name
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div[2]/form/div[2]/div/div[1]/label/div/div[1]/div[1]/input').clear()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div[2]/form/div[2]/div/div[1]/label/div/div[1]/div/input').clear()
         driver.implicitly_wait(20)
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div[2]/form/div[2]/div/div[1]/label/div/div[1]/div[1]/input').send_keys(mail)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div[2]/form/div[2]/div/div[1]/label/div/div[1]/div/input').send_keys(mail)
         driver.implicitly_wait(20)
         time.sleep(3)
         #From date
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div[2]/form/div[2]/div/div[2]/div[1]/label/div/div[1]/div[2]/input').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div[2]/form/div[2]/div/div[2]/div[1]/label/div/div[1]/div[2]/input').click()
         driver.implicitly_wait(20)
         driver.find_element_by_xpath('/html/body/div[4]/div/div/div[2]/div[1]/div/div[3]/div/div[22]/button/span[2]/span').click()
         driver.implicitly_wait(20)
         time.sleep(10)
         #to date
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div[2]/form/div[2]/div/div[2]/div[2]/label/div/div[1]/div[2]/input').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div[2]/form/div[2]/div/div[2]/div[2]/label/div/div[1]/div[2]/input').click()
         driver.implicitly_wait(20)
         driver.find_element_by_xpath('/html/body/div[4]/div/div/div[2]/div[1]/div/div[3]/div/div[28]/button/span[2]/span').click()
         driver.implicitly_wait(20)
         time.sleep(10)
         try:
             #Teams
-            teams = driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div[2]/form/div[2]/div/div[3]/label/div/div/div/div/div/input')
+            teams = driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div[2]/form/div[2]/div/div[3]/label/div/div/div/div/div/input')
             driver.implicitly_wait(20)
             actions = ActionChains(driver)
             actions.double_click(teams)
@@ -938,19 +940,19 @@ def Course_Assignments(driver,target):
         except BaseException as e:
             pass
         #check box #Admission control
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div[2]/form/div[2]/div/div[4]/div[3]/div[1]/div/div[1]/div[2]/div[1]/div').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div[2]/form/div[2]/div/div[4]/div[3]/div[1]/div/div[1]/div[2]/div[1]/div').click()
         driver.implicitly_wait(10)
         time.sleep(20)
         #API Security attack
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div[2]/form/div[2]/div/div[4]/div[3]/div[2]/div/div[1]/div[2]/div[1]/div').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div[2]/form/div[2]/div/div[4]/div[3]/div[2]/div/div[1]/div[2]/div[1]/div').click()
         driver.implicitly_wait(20)
         time.sleep(10)
         #Save Draft
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div[2]/form/div[2]/div/div[4]/div[3]/div[2]/div/div[1]/div[2]/div[1]/div/div').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div[2]/form/div[2]/div/div[8]/div/button[1]').click()
         driver.implicitly_wait(20)
         time.sleep(15)
         #Publish
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div[2]/form/div[2]/div/div[8]/div/button[2]').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div[2]/form/div[2]/div/div[8]/div/button[2]').click()
         driver.implicitly_wait(20)
         time.sleep(10)
         print('assignments')
@@ -961,11 +963,11 @@ def Course_Assignments(driver,target):
         driver.implicitly_wait(20)
         time.sleep(20)
         #Search
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div[2]/div[1]/div/div/div[1]/label/div/div/div[2]/input').clear()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div[2]/div[1]/div/div/div[1]/label/div/div/div[2]/input').clear()
         driver.implicitly_wait(20)
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div[2]/div[1]/div/div/div[1]/label/div/div/div[2]/input').send_keys(mail)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div[2]/div[1]/div/div/div[1]/label/div/div/div[2]/input').send_keys(mail)
         driver.implicitly_wait(20)
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div[2]/div[1]/div/div/div[1]/label/div/div/div[2]/input').send_keys(Keys.ENTER)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div[2]/div[1]/div/div/div[1]/label/div/div/div[2]/input').send_keys(Keys.ENTER)
         driver.implicitly_wait(20)
         time.sleep(10)
     except BaseException as e:
@@ -975,20 +977,20 @@ def Course_Assignments(driver,target):
         driver.implicitly_wait(20)
         time.sleep(20)
         #Journey
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div[1]/div/div[2]/div[2]/div').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div[1]/div/div[2]/div[3]').click()
         driver.implicitly_wait(20)
         time.sleep(10)
         print('Journey')
         #search
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div[2]/div/div/div/div[1]/div/label/div/div/div[2]/input').clear()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div[2]/div/div/div/div[1]/div/label/div/div/div[2]/input').clear()
         driver.implicitly_wait(20)
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div[2]/div/div/div/div[1]/div/label/div/div/div[2]/input').send_keys('deeptest')
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div[2]/div/div/div/div[1]/div/label/div/div/div[2]/input').send_keys('deeptest')
         driver.implicitly_wait(20)
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div[2]/div/div/div/div[1]/div/label/div/div/div[2]/input').send_keys(Keys.ENTER)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div[2]/div/div/div/div[1]/div/label/div/div/div[2]/input').send_keys(Keys.ENTER)
         driver.implicitly_wait(20)
         time.sleep(10)
         #deeptest rollout
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div[2]/div/div/div/div[2]/div/div/div/div[3]/div[3]/i').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div[2]/div/div/div/div[2]/div[1]/div/div/div[3]/div[3]/i').click()
         driver.implicitly_wait(20)
         time.sleep(7)
         #Quick Rollout
@@ -1004,40 +1006,40 @@ def Course_Assignments(driver,target):
         driver.implicitly_wait(20)
         time.sleep(20)
         #Search Name
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[4]/div/div[1]/div/label/div/div/div[2]/input').clear()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[1]/div/label/div/div/div[2]/input').clear()
         driver.implicitly_wait(20)
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[4]/div/div[1]/div/label/div/div/div[2]/input').send_keys(mail)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[1]/div/label/div/div/div[2]/input').send_keys(mail)
         driver.implicitly_wait(20)
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[4]/div/div[1]/div/label/div/div/div[2]/input').send_keys(Keys.ENTER)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[1]/div/label/div/div/div[2]/input').send_keys(Keys.ENTER)
         driver.implicitly_wait(20)
         time.sleep(10)
         #first button
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[5]/div/div/div/table/tbody[2]/tr[1]/td[1]').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[4]/div/div/div/table/tbody[2]/tr/td[1]').click()
         driver.implicitly_wait(20)
         time.sleep(15)
         #challenge
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[2]/div[1]/div/div[2]/div[2]/div').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div[2]/div[1]/div/div[2]/div[2]/div').click()
         driver.implicitly_wait(20)
         time.sleep(15)
         #Reports
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[2]/div[1]/div/div[3]/div[2]').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div[2]/div[1]/div/div[3]/div[3]').click()
         driver.implicitly_wait(20)
         time.sleep(15)
         print('reports')
         #Leaderboard
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[2]/div[2]/div/div/div/div/div/div[3]/div/div/div[2]/div[2]/div').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div[2]/div[2]/div/div/div/div/div/div[3]/div/div/div[2]/div[2]/div').click()
         driver.implicitly_wait(20)
         time.sleep(15)
         #Bar chart view
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[2]/div[2]/div/div/div/div/div/div[4]/div/div[1]/div/button[2]/span[2]/span').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div[2]/div[2]/div/div/div/div/div/div[4]/div/div[1]/div/button[2]/span[2]/span').click()
         driver.implicitly_wait(20)
         time.sleep(10)
         #Podium view
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[2]/div[2]/div/div/div/div/div/div[4]/div/div[1]/div/button[3]/span[2]/span').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div[2]/div[2]/div/div/div/div/div/div[4]/div/div[1]/div/button[3]/span[2]/span').click()
         driver.implicitly_wait(20)
         time.sleep(10)
         #Test results
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[2]/div[2]/div/div/div/div/div/div[3]/div/div/div[3]/div[2]/div').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div[2]/div[2]/div/div/div/div/div/div[3]/div/div/div[3]/div[2]/div').click()
         driver.implicitly_wait(20)
         time.sleep(15)
     except BaseException as e:
@@ -1047,15 +1049,15 @@ def Course_Assignments(driver,target):
         driver.get('{0}portal/company/teams'.format(target))
         driver.implicitly_wait(20)
         time.sleep(20)
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[2]/label/div/div/div[1]/input').clear()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div[2]/label/div/div/div[1]/input').clear()
         driver.implicitly_wait(20)
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[2]/label/div/div/div[1]/input').send_keys(mail)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div[2]/label/div/div/div[1]/input').send_keys(mail)
         driver.implicitly_wait(20)
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[2]/label/div/div/div[1]/input').send_keys(Keys.ENTER)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div[2]/label/div/div/div[1]/input').send_keys(Keys.ENTER)
         driver.implicitly_wait(20)
         time.sleep(10)
         #delete
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[4]/div/div/div/div/div/table/tbody/tr[1]/td[4]/div/button[2]/span[2]/div/div/i').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div/div/div/table/tbody/tr[1]/td[4]/div/button[2]/span[2]/div/div/i').click()
         driver.implicitly_wait(20)
         time.sleep(10)
         #Yes button
@@ -1073,7 +1075,7 @@ def Administrators_Organization_Integrations(driver,target):
         time.sleep(10)
         print('Adminstrator')
         #Download
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div[1]/div[1]/div[2]/div/div/a/span[2]/div[2]').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div[1]/div[1]/div[2]/div/div/a/span[2]/div[2]').click()
         driver.implicitly_wait(20)
         time.sleep(10)
         print('Adminstrators list Downloaded')
@@ -1085,7 +1087,7 @@ def Administrators_Organization_Integrations(driver,target):
         time.sleep(10)
         print('Organization')
         #CSV Course video lab
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/div[1]/div/div[1]/div/div/div[1]/button/span[2]/i').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div[1]/div/div[1]/div/div/div[1]/button/span[2]/i').click()
         driver.implicitly_wait(20)
         time.sleep(10)
         print('CSV Course video lab report Downloaded')
@@ -1097,10 +1099,10 @@ def Administrators_Organization_Integrations(driver,target):
         time.sleep(10)
         print('integration')
         #Scim integration
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[1]').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div[1]').click()
         driver.implicitly_wait(20)
         time.sleep(10)
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[2]/div/div/div/button/span[2]/span').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div[2]/div/div/div/button/span[2]/span').click()
         driver.implicitly_wait(20)
         time.sleep(10)
         print('Scim integration secret generate')
@@ -1112,10 +1114,10 @@ def Administrators_Organization_Integrations(driver,target):
         time.sleep(10)
         print('integration')
         #Enterprise API integration
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[4]/div/div[1]').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[1]').click()
         driver.implicitly_wait(20)
         time.sleep(10)
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[4]/div/div[2]/div/div/div/button/span[2]/span').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div[2]/div/div/div/button/span[2]/span').click()
         driver.implicitly_wait(20)
         time.sleep(10)
         print('Enterprise API integration secret generate')
@@ -1127,7 +1129,7 @@ def Administrators_Organization_Integrations(driver,target):
         time.sleep(10)
         print('integration')
         #LTI Setup for LMS
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[5]/div/div[1]').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[4]/div/div[1]').click()
         driver.implicitly_wait(20)
         time.sleep(10)
         print('LTI Setup for LMS')
@@ -1139,10 +1141,10 @@ def Administrators_Organization_Integrations(driver,target):
         time.sleep(10)
         print('integration')
         #Jira Integration
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[6]/div/div[1]').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[5]/div/div[1]').click()
         driver.implicitly_wait(20)
         time.sleep(2)
-        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[6]/div/div[2]/div/div/div[1]/button/span[2]').click()
+        driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[5]/div/div[2]/div/div/div[1]/button/span[2]').click()
         driver.implicitly_wait(20)
         time.sleep(10)
         print('Connect Jira')
