@@ -454,13 +454,13 @@ def Admin_tournaments(driver,target):
         #Start date
         driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div[1]/div[2]/div/div/div/form/div[3]/label/div/div[1]/div[2]/input').click()
         driver.implicitly_wait(20)
-        driver.find_element_by_xpath('/html/body/div[4]/div/div/div[2]/div[1]/div/div[3]/div/div[22]/button/span[2]/span').click()
+        driver.find_element_by_xpath('/html/body/div[4]/div/div/div[2]/div[1]/div/div[3]/div/div[34]/button/span[2]/span').click()
         driver.implicitly_wait(20)
         time.sleep(5)
         #END date
         driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div/div/div[1]/div[2]/div/div/div/form/div[4]/label/div/div[1]/div[2]/input').click()
         driver.implicitly_wait(20)
-        driver.find_element_by_xpath('/html/body/div[4]/div/div/div[2]/div[1]/div/div[3]/div/div[25]/button/span[2]/span').click()
+        driver.find_element_by_xpath('/html/body/div[4]/div/div/div[2]/div[1]/div/div[3]/div/div[35]/button/span[2]/span').click()
         driver.implicitly_wait(20)
         time.sleep(5)
         
@@ -763,13 +763,13 @@ def Admin_interviews(driver,target):
         #Start date
         driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/form/div[3]/label/div/div[1]/div[2]/input').click()
         driver.implicitly_wait(20)
-        driver.find_element_by_xpath('/html/body/div[4]/div/div/div[2]/div[1]/div/div[3]/div/div[22]/button/span[2]').click()
+        driver.find_element_by_xpath('/html/body/div[4]/div/div/div[2]/div[1]/div/div[3]/div/div[34]/button/span[2]').click()
         driver.implicitly_wait(20)
         time.sleep(5)
         #END date
         driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[3]/div/div/form/div[4]/label/div/div[1]/div[2]/input').click()
         driver.implicitly_wait(20)
-        driver.find_element_by_xpath('/html/body/div[4]/div/div/div[2]/div[1]/div/div[3]/div/div[25]/button/span[2]/span').click()
+        driver.find_element_by_xpath('/html/body/div[4]/div/div/div[2]/div[1]/div/div[3]/div/div[35]/button/span[2]/span').click()
         driver.implicitly_wait(20)
         time.sleep(5)
         try:
@@ -919,13 +919,13 @@ def Course_Assignments(driver,target):
         #From date
         driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div[2]/form/div[2]/div/div[2]/div[1]/label/div/div[1]/div[2]/input').click()
         driver.implicitly_wait(20)
-        driver.find_element_by_xpath('/html/body/div[4]/div/div/div[2]/div[1]/div/div[3]/div/div[22]/button/span[2]/span').click()
+        driver.find_element_by_xpath('/html/body/div[4]/div/div/div[2]/div[1]/div/div[3]/div/div[34]/button/span[2]/span').click()
         driver.implicitly_wait(20)
         time.sleep(10)
         #to date
         driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/main/div[2]/div[2]/form/div[2]/div/div[2]/div[2]/label/div/div[1]/div[2]/input').click()
         driver.implicitly_wait(20)
-        driver.find_element_by_xpath('/html/body/div[4]/div/div/div[2]/div[1]/div/div[3]/div/div[28]/button/span[2]/span').click()
+        driver.find_element_by_xpath('/html/body/div[4]/div/div/div[2]/div[1]/div/div[3]/div/div[35]/button/span[2]/span').click()
         driver.implicitly_wait(20)
         time.sleep(10)
         try:
