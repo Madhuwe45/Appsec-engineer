@@ -63,7 +63,7 @@ info = mail+'@we45.com'
 print(info)
 
 email_login='madhu.kumar@we45.com'
-email_password= '  '
+email_password= 'M@dhuM@ddy'
 
 
 
@@ -659,7 +659,6 @@ def Admin_assignments(driver,target):
         time.sleep(20)
         #Play button
         driver.find_element_by_xpath('/html/body/div[1]/div/div/main/section[1]/div[2]/div/div/div[2]/div/div/div/div/div[2]/div/table/tbody[2]/tr/td[2]/button/span[2]').click()
-        # driver.find_element_by_xpath('/html/body/div[1]/div/div/main/section/div[2]/div[2]/div/div/div/div/div[2]/div/table/tbody/tr/td[2]/button/span[2]/i').click()
         driver.implicitly_wait(20)
         time.sleep(20)
         try:
@@ -699,7 +698,6 @@ def Admin_assignments(driver,target):
             actions = ActionChains(driver)
             actions.send_keys(Keys.DELETE)
             actions.perform()
-            # driver.find_element_by_xpath('/html/body/div[1]/div[2]/div[3]/div[1]/div[3]/div/div[1]/div[2]/div[1]/div[4]/div[12]/span/span').send_keys(Keys.BACKSPACE)
             driver.implicitly_wait(20)
             time.sleep(5)
             print('Secrets Path')
@@ -778,12 +776,10 @@ def Admin_assignments(driver,target):
         time.sleep(20)
         #Token insert space
         driver.find_element_by_xpath('/html/body/div[3]/div/div[2]/div/div/div[2]/form/div[1]/label/div/div[1]/div[1]/input').send_keys(Keys.CONTROL, "v")
-        # driver.find_element_by_xpath('/html/body/div[3]/div/div[2]/div/form/div[1]/label/div/div[1]/div/input').send_keys(Keys.CONTROL, "v")
         driver.implicitly_wait(20)
         time.sleep(20)
         #Verify button
         driver.find_element_by_xpath('/html/body/div[3]/div/div[2]/div/div/div[2]/form/div[2]/button[2]/span[2]').click()
-        # driver.find_element_by_xpath('/html/body/div[3]/div/div[2]/div/form/div[2]/button[2]/span[2]').click()
         driver.implicitly_wait(20)
         time.sleep(20)
 
@@ -800,7 +796,6 @@ def Admin_assignments(driver,target):
         
         #Assigned challenges
         driver.find_element_by_xpath('/html/body/div[1]/div/div/main/div/div/div/div[3]/span').click()
-        # driver.find_element_by_xpath('/html/body/div[1]/div/header/div[2]/div[1]/div/div/div[3]/a').click()
         driver.implicitly_wait(20)
         time.sleep(20)
         driver.execute_script("window.scrollBy(0,80)")
@@ -808,10 +803,17 @@ def Admin_assignments(driver,target):
         time.sleep(5)
         #Continue button
         driver.find_element_by_xpath('/html/body/div[1]/div/div/main/section[1]/div[2]/div/div/div[3]/button/span[2]/span').click()
-        # driver.find_element_by_xpath('/html/body/div[1]/div/div/main/section[1]/div[2]/div[3]/button/span[2]/span').click()
         driver.implicitly_wait(20)
         time.sleep(20)
-        driver.execute_script("window.scrollBy(0,80)")
+        actions = ActionChains(driver)
+        actions.send_keys(Keys.DOWN*5)
+        actions.perform()
+        driver.implicitly_wait(20)
+        time.sleep(4)
+        driver.find_element_by_xpath('/html/body/div[1]/div/div/main/section[1]/div[2]/div/div/div[2]/div/div/div/div/section/div[1]/div/div/div/p[2]/div/div/div').click()
+        driver.implicitly_wait(20)
+        time.sleep(7)
+        driver.execute_script("window.scrollBy(0,100)")
         driver.implicitly_wait(20)
         time.sleep(5)
         #FInish button
